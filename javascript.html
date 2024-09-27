@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+    function login() {
+      var correctUsername = "Tarunbunga";
+      var correctPassword = "tarunbunga8888";
+  
+      var username = document.getElementById("username");
+      var password = document.getElementById("password");
+      var message = document.getElementById("message");
+  
+      if (username === correctUsername) {
+        if (password === correctPassword) {
+          message.textContent = "Login success";
+        } 
+        else {
+          message.textContent = "Incorrect password";
+        }
+      }
+       else {
+        message.textContent = "Incorrect username or password";
+      }
+    }
+  </script>
+</body>
+</html>

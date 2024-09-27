@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scholarship Eligibility</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        input {
+            padding: 8px;
+            margin: 15px 0;
+            width: 95%;
+            border-radius: 10px;
+            border: 2px solid #ccc;
+            align-items: center;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #14b492;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #14b492;
+        }
+        .result {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Scholarship Eligibility Check</h2>
+    <label for="GPA">Enter your GPA:</label>
+    <input type="number" id="GPA" placeholder="Enter GPA">
+    <button onclick="checkEligibility()">Check Eligibility</button>
+    <div class="result" id="result"></div>
+</div>
+
+<script>
+    function checkEligibility() {
+
+        const GPA = parseFloat(document.getElementById('GPA').value);
+        const result = document.getElementById('result');
+
+   
+        if (isNaN(GPA)) {
+            result.textContent = "Please enter a valid GPA.";
+            result.style.color = "red";
+            return;
+        }
+
+       
+        if (GPA >= 7.5) {
+            result.textContent = "Congratulations! You are eligible for the scholarship.";
+            result.style.color = "green";
+        } else {
+            result.textContent = "Sorry, you are not eligible for the scholarship.";
+            result.style.color = "red";
+        }
+    }
+</script>
+
+</body>
+</html>

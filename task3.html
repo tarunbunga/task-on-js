@@ -1,0 +1,39 @@
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate Selling Price</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+        }
+        input, button {
+            margin-top: 10px;
+            padding: 8px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Selling Price Calculator</h1>
+        <form id="priceForm">
+            <label for="costPrice">Enter Cost Price:</label>
+            <input type="number" id="costPrice" placeholder="Enter cost price" required>
+            <button type="button" onclick="actualPrice()">Calculate Selling Price</button>
+        </form>
+        <h2 id="result"></h2>
+    </div>
+
+    <script>
+        function actualPrice() {
+            const costPrice = parseFloat(document.getElementById('costPrice').value);
+            const discountAmount = costPrice * 0.20;
+            const sellingPrice = costPrice - discountAmount;
+            document.getElementById('result').innerText =` Selling Price after 20% discount: ${sellingPrice.toFixed(2)}`;
+        }
+    </script>
+</body>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: url("image.jpg") no-repeat;
+            background-size: cover;
+            background-position: center;}
+         
+        .wrapper{
+            width: 380px;
+            height: 420px;
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, .2);
+            color: #fff;
+            border-radius: 12px;
+            padding: 20px 20px;
+
+        }
+        .wrapper .input-box{
+            padding-left: 25px;
+            position: relative;
+            width: 100%;
+             height: 50px;
+            margin: 10px;
+        }
+        .button{
+            text-align: center;
+            margin-top: -10px;
+        }
+        .btn{
+            width: 100px;
+            height: 30px;
+            border-radius: 25px;
+            text-align: center;
+            justify-content: center;
+        } */
+        h1{
+            text-align: center;
+        }
+        #wrapper-2{
+          width: 300px;
+          border: 2px solid rgba(255, 255, 255, .2);
+          border-radius: 30px;
+          background: transparent;
+          text-align: center;
+          justify-content: center;
+        }
+        div{
+          position: relative;
+          margin: 20px;
+        }
+        
+        h1{
+          color: #fff;
+        }
+        .input{
+          width: 100%;
+          height: 40px;
+          border-radius: 10px;
+          border: 2px solid rgba(255, 255, 255, 0.2);
+          background: transparent;
+          color: #fff;
+          outline:none;
+          font-size: 1em;
+          padding-left: 30px;
+        }
+
+        .error-message{
+          color:red;
+          font-size: 15px;
+          margin-top: 8px;
+        }
+            </style>
+</head>
+<body>
+</head>
+<body>
+     <!-- <div class="wrapper">
+    <form >
+      <h1>SignUp</h1>
+      <div class="input-box">
+        <span class="icon">
+            <ion-icon name="mail"></ion-icon>
+        </span>
+        <input type="text" id="firstname" placeholder="Tarun">
+        <lable>First name</lable>
+    </div>
+      <div class="input-box">
+        <input type="text" id="firstname" placeholder="Bunga">
+        <span id=""></span>
+    </div>
+      <div class="input-box">
+        <input type="text" id="firstname" placeholder="7674960865">
+        <lable>Phone no</lable>
+      </div>
+      <div class="input-box">
+        <input type="text" id="username" placeholder="create Username">
+        <lable>username</lable>
+    </div>
+      <div class="input-box">
+        <input type="password" id="password" placeholder="create Password" >
+        <lable>Password</lable>
+    </div>
+      <div class="button">
+      <a href="#" target="_self"></a><button type="submit" class="btn" onclick="login()">sigup</button></a>
+      </div>
+      <div class="message">
+        <p id="message" class="message"></p>
+      </div>
+    </form>
+</div> -->
+<div id="wrapper-2">
+  <h1>login</h1>
+  <form name="regform" onsubmit="return validateform()"></form>
+  <div>
+    <input type="text" class="input" id="username" name="name" placeholder="user name"/>
+    <span id="user-error" class="error-message"></span>
+  </div>
+  <div>
+    <input type="number" class="input" id="number" name="number" placeholder="8899558899"/>
+    <span id="Phone-error" class="error-message"></span>
+  </div>
+  <div>
+    <input type="email" class="input" id="email" name="email" placeholder="acdefgh@gmail.com"/>
+    <span id="email-error" class="error-message"></span>
+  </div>
+  <div>
+    <input type="password" class="input" id="password" name="password" placeholder="enter password"/>
+    <span id="password-error" class="error-message"></span>
+  </div>
+  <div>
+    <input type="checkbox" id="agree" name="Agree" />
+    <label for="agree">I agree to the above information</label>
+      <span id="agree-error" class="error-message"></span>
+  </div>
+  <div>
+    <input type="submit" value="Send" name="Submit" />
+    <input type="reset" value="Reset" name="Reset" />
+  </div>
+</div>
+<script>
+  function validateform(){
+    var username=document.getElementById("username").value;
+    var number=document.getElementById("number"),value;
+    var email=document.getElementById("email").value;
+    var password=document.getElementById("password").value;
+    var username=document.getElementById("username").value;
+    var agree=document.getElementById("agree").checked;
+
+    var userError=document.getElementById("user-error");
+    var numberError=document.getAnimations("Phone-error");
+    var emailError=document.getElementById("user-error");
+    var passwordError=document.getAnimations("password-error");
+    var agreeError=document.getElementById("agree-error");
+
+    userError.textContent="";
+    numberError.textContent="";
+    emailError.textContent="";
+    passwordError.textContent="";
+    agreeError.textContent="";
+
+
+    let isValid=true;
+    if(username===""||/\d/.test(username)){
+    userError.textContent="please enter a name";
+    isValid=false;
+    }
+    if(numberError==="/^[6-9]{9}$/"){
+    numberError.textContent="please enter valied number";
+    isValid=false;
+    }
+    if(emailError===""||/^\w+([\.-]?\w+)*@\w+([-]?\w+)*\.\w{2,3}([\.]?\w{2,3})*$/){
+    emailError.textContent="please enter valied mail";
+    isValid=false;
+    }
+    if(passwordError===""||/^\w+([\.-]?\w+)*@\w+([-]?\w+)*\.\w{2,3}([\.]?\w{2,3})*$/){
+
+    }
+    if (!agree) {
+    agreeError.textContent ="Please agree to the above information.";
+    isValid = false;
+    }
+    return isValid;
+  }
+</script>
+</body>
+</html>
